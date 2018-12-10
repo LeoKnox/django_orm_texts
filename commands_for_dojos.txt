@@ -1,0 +1,28 @@
+Dojos.objects.create(name="Dojo S",city="Seattle",state="WA")
+Dojos.objects.create(name="Dojo Z",city="Zombie City",state="ud")
+Dojos.objects.create(name="Dojo I",city="Ibiza",state="SP")
+
+dojos_to_delete = Dojos.objects.all()
+dojos_to_delete.delete()
+
+Dojos.objects.create(name="Bat Dojo",city="Gotham",state="XX")
+Dojos.objects.create(name="Mar Dojo", city="Planet",state="MA")
+Dojos.objects.create(name="Lost Dojo", city="It's Lost", state="??")
+
+Ninja.objects.create(dojo_id=Dojos.objects.get(name="Bat Dojo"),first_name="Dick",last_name="Grayson")
+Ninja.objects.create(dojo_id=Dojos.objects.get(name="Bat Dojo"),first_name="Mr.",last_name="Joker")
+Ninja.objects.create(dojo_id=Dojos.objects.get(name="Bat Dojo"),first_name="Peter",last_name="Parker")
+
+Ninja.objects.create(dojo_id=Dojos.objects.get(name="Mar Dojo"),first_name="Marv",last_name="Martian")
+Ninja.objects.create(dojo_id=Dojos.objects.get(name="Mar Dojo"),first_name="John",last_name="Carter")
+Ninja.objects.create(dojo_id=Dojos.objects.get(name="Mar Dojo"),first_name="Sailor",last_name="Moon")
+
+Ninja.objects.create(dojo_id=Dojos.objects.get(name="Lost Dojo"),first_name="Doctor",last_name="Who")
+Ninja.objects.create(dojo_id=Dojos.objects.get(name="Lost Dojo"),first_name="Doctor",last_name="Strange")
+Ninja.objects.create(dojo_id=Dojos.objects.get(name="Lost Dojo"),first_name="Doctor",last_name="Banzai")
+
+Dojos.objects.first().ninjas.all()
+Dojos.objects.last().ninjas.all()
+Ninja.objects.last().dojo_id.name
+
+Dojos.objects.create(name="Future Dojo", city="City of tomorrow", state="++", desc="Dojo of the Future")
