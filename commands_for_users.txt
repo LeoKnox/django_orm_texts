@@ -1,0 +1,18 @@
+user_one = User.objects.create(first_name="Chuck",last_name="Finelly",email_address="be@dr.com",age=55)
+user_two = User.objects.create(first_name="Ike",last_name="Torg",email_address="it@gorn.com",age=32)
+user_three = User.objects.create(first_name="Simba",last_name="King",email_address="loud@rarr.com",age=22)
+
+all_users = User.objects.all()
+
+first_user = User.objects.first()
+last_user = User.objects.last()
+
+user_to_update = User.objects.get(id=3)
+user_to_update.last_name = "Pancakes"
+user_to_update.save()
+
+user_to_delete = User.objects.get(id=2)
+user_to_delete.delete()
+
+user_sort = User.objects.all().order_by('first_name')
+user_sort = User.objects.all().order_by('-first_name')
