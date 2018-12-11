@@ -1,0 +1,51 @@
+Books.objects.create(name="C Sharp", desc="this.c sharp book")
+Books.objects.create(name="Java", desc="this.java book")
+Books.objects.create(name="Python", desc="this.python book")
+Books.objects.create(name="PHP", desc="this.PHP book")
+Books.objects.create(name="Ruby", desc="bleh")
+
+Author.objects.create(first_name="Jane",last_name="Austen",email="ja@auth.com")
+Author.objects.create(first_name="Emily",last_name="Dickinson",email="ed@auth.com")
+Author.objects.create(first_name="Fyodor",last_name="Dostoevksy",email="fd@auth.com")
+Author.objects.create(first_name="William",last_name="Shakespseare",email="ws@auth.com")
+Author.objects.create(first_name="Lau",last_name="Tzu",email="lt@auth.com")
+
+book_update = Books.objects.get(name="C Sharp")
+book_update.name = "C#"
+book_update.save()
+
+auth_update = Author.objects.get(id=12)
+auth_update.first_name = "Bill"
+auth_update.save()
+
+this_books = Book.objects.all()
+this_auth = Author.objects.first()
+this_auth.books.add(this_books[0])
+this_auth.books.add(this_books[1])
+
+this_auth.id = this_auth.id + 1
+this_auth.books.add(this_books[0])
+this_auth.books.add(this_books[1])
+this_auth.books.add(this_books[2])
+
+this_auth.id = this_auth.id + 1
+this_auth.books.add(this_books[0])
+this_auth.books.add(this_books[1])
+this_auth.books.add(this_books[2])
+this_auth.books.add(this_books[3])
+
+
+this_auth.id = this_auth.id + 1
+this_auth.books.add(this_books[0])
+this_auth.books.add(this_books[1])
+this_auth.books.add(this_books[2])
+this_auth.books.add(this_books[3])
+this_auth.books.add(this_books[4])
+
+Author.objects.get(id=3)
+this_book.writer.all()
+this_book.writer.first().delete()
+
+this_book = Book.objects.get(id=1)
+this_book.writer = Author.object.get(id=5)
+
